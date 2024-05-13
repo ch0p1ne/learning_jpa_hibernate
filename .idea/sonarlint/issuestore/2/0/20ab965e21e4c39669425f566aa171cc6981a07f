@@ -1,5 +1,7 @@
 
-f
-java:S3457	"%String contains no format specifiers.(Šª„ıÿÿÿÿJ$08c02aec-2982-4530-8446-a8db5775848c
-k	java:S106	"+Replace this use of System.out by a logger.(Šª„ıÿÿÿÿJ$f95e55cc-e812-4b24-afb9-8b28a0106835
-k	java:S106"+Replace this use of System.out by a logger.(Ğö¶üÿÿÿÿJ$09cf3fe0-80f1-4ee7-aab4-29a686f23fa8
+
+java:S2095"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(ÇÌØ8ÇëÉûö1J$5cb72d64-b6b4-4e7e-b295-c01a5ed88d86
+”
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(²Í„\8ÈëÉûö1J$6d36c583-1575-4d39-a15e-9f33d3f8b401
+m
+java:S1128	"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8ÖëÉûö1J$577d38c1-586b-4283-8aa8-d7924ad56b84

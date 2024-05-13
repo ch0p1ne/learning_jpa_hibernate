@@ -1,19 +1,36 @@
 package ga.chopin;
 
+import ga.chopin.dao.Produit;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
+import java.sql.Date;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Entrée with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("demo_chopin");
 
-        // Press Maj+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-            // Press Maj+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        /* créattion de la transaction */
+         EntityTransaction transaction = entityManager.getTransaction();
+
+        //démarage de la transaction
+
+        Produit p = new Produit("savon", "1205c");
+        transaction.begin();
+
+
+        try {
+            entityManager.persist(p);
+            transaction.commit();
+        } catch (Exception e){
+            transaction.rollback();
+            e.printStackTrace();
         }
     }
 }
