@@ -12,25 +12,27 @@ import java.sql.Date;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("demo_chopin");
-
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        /* créattion de la transaction */
-         EntityTransaction transaction = entityManager.getTransaction();
-
-        //démarage de la transaction
-
-        Produit p = new Produit("savon", "1205c");
-        transaction.begin();
 
 
-        try {
-            entityManager.persist(p);
-            transaction.commit();
-        } catch (Exception e){
-            transaction.rollback();
-            e.printStackTrace();
+        try (EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("demo");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();) {
+
+            //démarage de la transaction
+
+            Produit p = new Produit("le lait nido", "10127l");
+            entityManager.getTransaction().begin();
+
+
+            try {
+                /* persistance
+                    entityManager.persist(p);
+                   entityManager.getTransaction().commit();
+
+                 */
+            } catch (Exception e) {
+                entityManager.getTransaction().rollback();
+                e.printStackTrace();
+            }
         }
     }
 }

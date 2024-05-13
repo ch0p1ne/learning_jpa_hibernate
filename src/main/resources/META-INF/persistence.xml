@@ -3,16 +3,26 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
-    <persistence-unit name="demo_chopin">
+    <persistence-unit name="demo">
         <description>
             Persistence unit for the Jakarta Persistence tutorial of the Hibernate Getting Started Guide
         </description>
 
+        <!-- fornisseur d'implementation de la persistance ici dans mon cas hibernates -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+
+        <!-- les classe qui sont conserner par le mappage en autres, les classes avec l'annotation @entity -->
+        <class>ga.chopin.dao.Produit</class>
+
+
+
         <properties>
             <!-- Database connection settings -->
-            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost/test_java"/>
-            <property name="hibernate.connection.username" value="postgres"/>
-            <property name="hibernate.connection.password" value="root"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/test_java"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="root"/>
 
 
             <!-- Automatically export the schema -->

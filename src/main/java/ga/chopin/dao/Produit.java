@@ -11,7 +11,7 @@ import java.util.Date;
 public class Produit implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Column(name = "designation", nullable = false, length = 75)
     private String designation;
@@ -21,7 +21,7 @@ public class Produit implements Serializable {
     @Column(name = "dateArr")
     private Date dateArriver;
     public Produit() {
-        // TODO
+        // TODO.MD
         //
         //  it's for after
     }
@@ -50,5 +50,15 @@ public class Produit implements Serializable {
 
     public Date getDateArriver() {
         return dateArriver;
+    }
+
+    @Override
+    public String toString() {
+        return "Produit{" +
+                "id=" + id +
+                ", designation='" + designation + '\'' +
+                ", code='" + code + '\'' +
+                ", dateArriver=" + dateArriver +
+                '}';
     }
 }
