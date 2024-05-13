@@ -17,8 +17,6 @@ public class Produit implements Serializable {
     private String designation;
     @Column(nullable = false, length = 25)
     private String code;
-
-    @Column(name = "dateArr")
     private Date dateArriver;
     public Produit() {
         // TODO.MD
