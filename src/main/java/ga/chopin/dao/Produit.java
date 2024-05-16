@@ -20,8 +20,6 @@ public class Produit implements Serializable {
     private Date dateArriver;
     public Produit() {
         // TODO.MD
-        //
-        //  it's for after
     }
 
     public Produit(String designation, String code, Date dateArriver) {

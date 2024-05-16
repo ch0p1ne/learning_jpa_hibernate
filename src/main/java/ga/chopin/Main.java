@@ -27,6 +27,13 @@ public class Main {
                     entityManager.persist(p);
                    entityManager.getTransaction().commit();
 
+
+                   public UserEntity getUserByIdWithPlainQuery(Long id) {
+                    Query jpqlQuery = getEntityManager().createQuery("SELECT u FROM UserEntity u WHERE u.id=:id");
+                    jpqlQuery.setParameter("id", id);
+                    return (UserEntity) jpqlQuery.getSingleResult();
+}
+
                  */
 
                 /* initialisation d'un object par recherche en base  de donner d'un entityManager */
