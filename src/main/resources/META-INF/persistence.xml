@@ -13,7 +13,7 @@
 
 
         <!-- les classe qui sont conserner par le mappage en autres, les classes avec l'annotation @entity -->
-        <class>ga.chopin.dao.Produit</class>
+        <class>ga.chopin.Dao.Produit</class>
 
 
 

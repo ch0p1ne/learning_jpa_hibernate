@@ -1,6 +1,6 @@
 package ga.chopin;
 
-import ga.chopin.dao.Produit;
+import ga.chopin.Dao.Produit;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

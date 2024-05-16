@@ -1,4 +1,4 @@
-package ga.chopin.dao;
+package ga.chopin.Dao;
 
 
 import jakarta.persistence.*;
